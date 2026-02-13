@@ -15,7 +15,7 @@ public class study {
        for(i=0; i<quantidade ; i++){
         System.out.println("Fale o seu primeiro numero para somar e calcular media: ");
         double numero = robson.nextDouble();
-        soma =+ numero;
+        soma = soma + numero;
        }
 
        //SAIDA DE DADOS PARA A SOMA E MEDIA
