@@ -1,20 +1,11 @@
 package project;
-
 import java.util.Scanner;
 
-public class project2 {
-    public static void main(String[] args) {
+public class fimDaCompraLojinha {
+    public static void fimdesconto(String[] args) {
         boolean isPremium = false;
-
         Scanner entrada_dados = new Scanner(System.in);
-        System.out.println("--------------------------");
-        System.out.println("-ENTRADA DE DADOS LOJJOAO-");
-        System.out.println("--------------------------");
-
-        System.out.println("Qual foi o valor total da sua compra? ");
-        double valor = entrada_dados.nextDouble();
-        entrada_dados.nextLine();
-
+        
         System.out.println("Calculando...");
 
         try{
@@ -41,15 +32,15 @@ public class project2 {
             System.out.println("Deu erro nessa bagaça");
         }
 
-        double descontode15 = (valor * 0.15);
-        double descontode5 = (valor * 0.05);
+        double descontode15 = (dadosLojinha.total * 0.15);
+        double descontode5 = (dadosLojinha.total * 0.05);
 
-        if (valor >= 200 && isPremium) {
-            System.out.println("Esse é o seu valor com desconto de 15%, ficou nesse valor:" + "R$" +(valor - descontode15));
-        }else if (valor >= 200 && isPremium == false){
-            System.out.println("Esse é o seu valor com desconto de 5%, ficou nesse valor: " + "R$" +(valor - descontode5));
+        if (dadosLojinha.total >= 200 && isPremium) {
+            System.out.println("Esse é o seu valor com desconto de 15%, ficou nesse valor:" + "R$" +(dadosLojinha.total - descontode15));
+        }else if (dadosLojinha.total >= 200 && isPremium == false){
+            System.out.println("Esse é o seu valor com desconto de 5%, ficou nesse valor: " + "R$" +(dadosLojinha.total - descontode5));
         }else{
-            System.out.println("nao tem desconto maldito, ficou no valor de " + "R$" + valor);
+            System.out.println("nao tem desconto maldito, ficou no valor de " + "R$" + dadosLojinha.total);
         }
 
         entrada_dados.close();
