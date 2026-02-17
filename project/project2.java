@@ -1,4 +1,5 @@
-package project2;
+package project;
+
 import java.util.Scanner;
 
 public class project2 {
