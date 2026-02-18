@@ -14,7 +14,7 @@ public class fimDaCompraLojinha {
             System.out.println("Deu erro nessa bagaça");
         }
         
-        System.out.println("Você é premium na LOJJOAO? ");
+        System.out.println("Você é premium na LOJINHA? ");
         String premium = entrada_dados.nextLine();
         
 
