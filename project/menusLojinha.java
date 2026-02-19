@@ -8,9 +8,10 @@ public class menusLojinha {
         System.out.println("---------------------------");
         System.out.println("Oque você quer fazer?");
         System.out.println("1- Quero fazer compras na LOJINHA");
-        System.out.println("2- Verificar valor");
-        System.out.println("3- Concluir compra");
-        System.out.println("4- Sair");
+        System.out.println("2- Realizar cadastro de produtos");
+        System.out.println("3- Verificar valor");
+        System.out.println("4- Concluir compra");
+        System.out.println("5- Sair");
     }
     public static void compras(String[] args) {
         //MENU DA LOJINHA

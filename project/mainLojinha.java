@@ -21,14 +21,16 @@ public class mainLojinha {
             else if(opcao2 == 5){break;}
             }
 
+        }else if(opcao == 2){
+            cadastroLojinha.cadastro(args);
+        }else if(opcao == 3){
+            System.out.println("esse é o valor da compra: "+ dadosLojinha.total);
         }else if(opcao == 4){
+           fimDaCompraLojinha.fimdesconto(args);
+            break;
+        }else if(opcao == 5){
             System.out.println("Até mais, volte logo :( ");
             break;
-        }else if(opcao == 3){
-            fimDaCompraLojinha.fimdesconto(args);
-            break;
-        }else if(opcao == 2){
-            System.out.println("esse é o valor da compra: "+ dadosLojinha.total);
         }
         }
     
