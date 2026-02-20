@@ -44,7 +44,7 @@ public class cadastroLojinha {
                 System.out.println("Qual o nome do produto? ");
                 dadosLojinha.nome_Produto[i] = entrada_dados_main.nextLine();
                 System.out.println("Qual o valor desse produto? ");
-                dadosLojinha.valor_Produto[i] = entrada_dados_main.nextInt();
+                dadosLojinha.valor_Produto[i] = entrada_dados_main.nextDouble();
                 System.out.println("verificaçãaaoooo");
                 System.out.println(dadosLojinha.valor_Produto[i]);
                 System.out.println(dadosLojinha.nome_Produto[i]);

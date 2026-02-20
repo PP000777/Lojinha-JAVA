@@ -23,6 +23,7 @@ public class menusLojinha {
         System.out.println("2- "+  dadosLojinha.nome_Produto[1]+ ": R$"+ dadosLojinha.valor_Produto[1]);
         System.out.println("3- "+  dadosLojinha.nome_Produto[2]+ ": R$"+ dadosLojinha.valor_Produto[2]);
         System.out.println("4- "+  dadosLojinha.nome_Produto[3]+ ": R$"+ dadosLojinha.valor_Produto[3]);
+        System.out.println("5- "+  dadosLojinha.nome_Produto[3]+ ": R$"+ dadosLojinha.valor_Produto[4]);
         System.out.println("5- Voltar ao menu para concluir sua compra");
     }
 
