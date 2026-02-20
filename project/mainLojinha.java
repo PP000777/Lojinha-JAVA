@@ -7,12 +7,13 @@ public class mainLojinha {
         Scanner entrada_dados_main = new Scanner(System.in);
 
         while(true){
-        menusLojinha.menu(args);
+        menusLojinha.menu(entrada_dados_main);
         int opcao = entrada_dados_main.nextInt();
+        entrada_dados_main.nextLine();
 
         if(opcao == 1){
             while (true) {
-            menusLojinha.compras(args);
+            menusLojinha.compras(entrada_dados_main);
             int opcao2 = entrada_dados_main.nextInt();
             if (opcao2 == 1) {dadosLojinha.total =+ 200;}
             else if(opcao2 == 2){dadosLojinha.total =+ 50;}
@@ -22,7 +23,7 @@ public class mainLojinha {
             }
 
         }else if(opcao == 2){
-            cadastroLojinha.cadastro(args);
+            cadastroLojinha.cadastro(entrada_dados_main);
         }else if(opcao == 3){
             System.out.println("esse é o valor da compra: "+ dadosLojinha.total);
         }else if(opcao == 4){
