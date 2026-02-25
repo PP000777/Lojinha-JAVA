@@ -7,7 +7,7 @@ public class cadastroLojinha {
         menusLojinha.menu_cadastro(entrada_dados_main);
         int opcao3 = entrada_dados_main.nextInt();
         entrada_dados_main.nextLine();
-
+                
         if (opcao3 == 1) {
             menusLojinha.opcao_Slots(entrada_dados_main);
             int opcao4 = entrada_dados_main.nextInt();
@@ -48,7 +48,7 @@ public class cadastroLojinha {
                 System.out.println("verificaçãaaoooo");
                 System.out.println(dadosLojinha.valor_Produto[i]);
                 System.out.println(dadosLojinha.nome_Produto[i]);
-                System.out.println("PRODUTO CADASTRADO COM SUCESSO NO SLOT "+ i + "!!!");
+                System.out.println("PRODUTO CADASTRADO COM SUCESSO NO SLOT "+ (i+1) + "!!!");
                 System.out.println("Voltando para a página inicial...");
                 try {
                     Thread.sleep(1000);
