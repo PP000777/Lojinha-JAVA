@@ -60,7 +60,8 @@ public class cadastroLojinha {
                 System.out.println("Todos os slots estão cheios parça");
             }
         }
+        }else if (opcao3 == 3) {
+            return;
         }
-
     }
 }

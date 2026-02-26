@@ -5,14 +5,7 @@ import java.util.Scanner;
 public class mainLojinha {
     public static void main(String[] args) {
         Scanner entrada_dados_main = new Scanner(System.in);
-        //Colocando produtos só para teste
-        //Produto 1
-        dadosLojinha.nome_Produto[0] = "Arroz";
-        dadosLojinha.valor_Produto[0] = 25.90;
-        //Produto 2
-        dadosLojinha.nome_Produto[1] = "Feijão";
-        dadosLojinha.valor_Produto[1] = 12.55;
-        
+
         while(true){
         menusLojinha.menu(entrada_dados_main);
         int opcao = entrada_dados_main.nextInt();
@@ -25,6 +18,7 @@ public class mainLojinha {
             if (opcao2<= dadosLojinha.valor_Produto.length && dadosLojinha.nome_Produto[opcao2-1] != null) {
                 System.out.println("Produto Adicionado");
                 dadosLojinha.total += dadosLojinha.valor_Produto[opcao2-1];
+                dadosLojinha.total_produtos[opcao2-1] = dadosLojinha.nome_Produto[opcao2-1];
                 break;
             }else{
                 System.out.println("Produto não cadastrado");
@@ -35,7 +29,7 @@ public class mainLojinha {
         }else if(opcao == 2){
             cadastroLojinha.cadastro(entrada_dados_main);
         }else if(opcao == 3){
-            System.out.println("esse é o valor da compra: "+ dadosLojinha.total);
+            menusLojinha.carrinho(args);
         }else if(opcao == 4){
            fimDaCompraLojinha.fimdesconto(args);
             break;
