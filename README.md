@@ -45,7 +45,7 @@ Este repositório serve como um registro da minha jornada em Java, mostrando min
 ## 🛠 Tecnologias utilizadas
 
 - Java  
-- IDEs como IntelliJ, Eclipse ou VS Code  
+- VS Code  
 - Git & GitHub  
 
 ---

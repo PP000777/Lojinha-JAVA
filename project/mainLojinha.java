@@ -5,6 +5,12 @@ import java.util.Scanner;
 public class mainLojinha {
     public static void main(String[] args) {
         Scanner entrada_dados_main = new Scanner(System.in);
+        //Produto 1
+        dadosLojinha.nome_Produto[0] = "Arroz";
+        dadosLojinha.valor_Produto[0] = 25.90;
+        //Produto 2
+        dadosLojinha.nome_Produto[1] = "Feijão";
+        dadosLojinha.valor_Produto[1] = 12.55;
 
         while(true){
         menusLojinha.menu(entrada_dados_main);

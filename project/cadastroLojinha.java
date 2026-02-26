@@ -26,7 +26,7 @@ public class cadastroLojinha {
                     System.out.println("Deu erro nessa bagaça");
                 }
             }else{
-                System.out.println("Ta cheio este slot");
+                System.out.println("SLOT OCUPADO!");
             }
 
         } else if(opcao3 == 2) {
