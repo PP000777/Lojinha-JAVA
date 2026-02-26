@@ -19,7 +19,7 @@ public class menusLojinha {
         System.out.print("Escolha uma opção: ");
     }
 
-    public static void menuEstoque() {
+    public static void menuEstoque(Scanner entrada_dados_main) {
 
         System.out.println("=================================================");
         System.out.println("           MENU DE ALTERAÇÕES DE ESTOQUE       ");
@@ -28,9 +28,15 @@ public class menusLojinha {
         System.out.println("1 - Realizar cadastro");
         System.out.println("2 - Alterar algum produto");
         System.out.println("3 - Remover algum produto");
-        System.out.println("0 - Voltar");
+        System.out.println("4 - Voltar");
         System.out.println("=================================================");
         System.out.print("Escolha uma opção: ");
+        int opcaoestoque = entrada_dados_main.nextInt();
+        if (opcaoestoque == 1) {
+            cadastroLojinha.cadastro(entrada_dados_main);
+        }else if (opcaoestoque == 2) {
+            edicaoDeProdutosLojinha.editor(entrada_dados_main);
+        }
     }
 
     public static void carrinho(String[] args) {
@@ -51,6 +57,8 @@ public class menusLojinha {
 
         System.out.println("=================================================");
     }
+    
+
 
     public static void compras(Scanner entrada_dados_main) {
 
@@ -101,5 +109,26 @@ public class menusLojinha {
 
         System.out.println("=================================================");
         System.out.print("Escolha uma opção: ");
+    }
+
+    public static void edicao() {
+        System.out.println("=================================================");
+        System.out.println("               EDITOR DE PRODUTOS                ");
+        System.out.println("=================================================");
+        System.out.println("Qual produto você quer editar?");
+        System.out.println("-------------------------------------------------");
+
+        for(int i = 0; i < dadosLojinha.nome_Produto.length; i++){
+            if (dadosLojinha.nome_Produto[i] == null) {
+                System.out.printf("%d - %-20s : R$ %.2f%n",
+                        (i+1), "Sem cadastro", dadosLojinha.valor_Produto[i]);
+            } else {
+                System.out.printf("%d - %-20s : R$ %.2f%n",
+                        (i+1), dadosLojinha.nome_Produto[i], dadosLojinha.valor_Produto[i]);
+            }
+        }
+        System.out.println("=================================================");
+        System.out.print("Escolha uma opção: ");
+        
     }
 }
