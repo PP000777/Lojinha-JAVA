@@ -5,30 +5,43 @@ import java.util.Scanner;
 public class mainLojinha {
     public static void main(String[] args) {
         Scanner entrada_dados_main = new Scanner(System.in);
+        //Adicionei dois produtos para os testes fluírem mais rapido
+        dadosLojinha.nome_Produto[0] = "Camisa";
+        dadosLojinha.valor_Produto[0] = 50.0;
+
+        dadosLojinha.nome_Produto[1] = "Calça";
+        dadosLojinha.valor_Produto[1] = 120.0;
 
         while(true){
-        menusLojinha.menu(args);
+        menusLojinha.menu(entrada_dados_main);
         int opcao = entrada_dados_main.nextInt();
+        entrada_dados_main.nextLine();
 
         if(opcao == 1){
             while (true) {
-            menusLojinha.compras(args);
+            menusLojinha.compras(entrada_dados_main);
             int opcao2 = entrada_dados_main.nextInt();
-            if (opcao2 == 1) {dadosLojinha.total =+ 200;}
-            else if(opcao2 == 2){dadosLojinha.total =+ 50;}
-            else if(opcao2 == 3){dadosLojinha.total =+ 190;}
-            else if(opcao2 == 4){dadosLojinha.total =+ 450;}
-            else if(opcao2 == 5){break;}
+            if (opcao2<= dadosLojinha.valor_Produto.length && dadosLojinha.nome_Produto[opcao2-1] != null) {
+                System.out.println("Produto Adicionado");
+                dadosLojinha.total += dadosLojinha.valor_Produto[opcao2-1];
+                dadosLojinha.total_produtos[opcao2-1] = dadosLojinha.nome_Produto[opcao2-1];
+                break;
+            }else{
+                System.out.println("Produto não cadastrado");
+                break;
+            }
             }
 
+        }else if(opcao == 2){
+            menusLojinha.menuEstoque(entrada_dados_main);
+        }else if(opcao == 3){
+            menusLojinha.carrinho(args);
         }else if(opcao == 4){
+           fimDaCompraLojinha.fimdesconto(args);
+            break;
+        }else if(opcao == 5){
             System.out.println("Até mais, volte logo :( ");
             break;
-        }else if(opcao == 3){
-            fimDaCompraLojinha.fimdesconto(args);
-            break;
-        }else if(opcao == 2){
-            System.out.println("esse é o valor da compra: "+ dadosLojinha.total);
         }
         }
     
