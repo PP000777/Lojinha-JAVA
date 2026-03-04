@@ -8,7 +8,10 @@ public class edicaoDeProdutosLojinha {
         int opcao_slotedi = entrada_dados_main.nextInt();
         entrada_dados_main.nextLine();
 
-        while (true) {
+        if (opcao_slotedi <= 0) {
+            System.out.println("ERRO: Seu numero é menor ou igual a 0, dê um valor válido!!");
+        }else{
+            while (true) {
         int opcc = opcao_slotedi - 1;
         
         if (dadosLojinha.nome_Produto[opcc] == null || dadosLojinha.valor_Produto[opcc] == 0) {
@@ -37,6 +40,9 @@ public class edicaoDeProdutosLojinha {
             }
         }
         }
+        }
+
+        
         
     }
 }

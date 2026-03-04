@@ -34,8 +34,14 @@ public class menusLojinha {
         int opcaoestoque = entrada_dados_main.nextInt();
         if (opcaoestoque == 1) {
             cadastroLojinha.cadastro(entrada_dados_main);
-        }else if (opcaoestoque == 2) {
+        } 
+        
+        if (opcaoestoque == 2) {
             edicaoDeProdutosLojinha.editor(entrada_dados_main);
+        }
+
+        if(opcaoestoque == 3){
+            removerProdutosLojinha.remover(entrada_dados_main);
         }
     }
 
@@ -130,5 +136,24 @@ public class menusLojinha {
         System.out.println("=================================================");
         System.out.print("Escolha uma opção: ");
         
+    }
+    public static void remover(){
+        System.out.println("=================================================");
+        System.out.println("              REMOVEDOR DE PRODUTOS              ");
+        System.out.println("=================================================");
+        System.out.println("Qual produto você quer excluir PERMANENTEMENTE?");
+        System.out.println("-------------------------------------------------");
+
+        for(int i = 0; i < dadosLojinha.nome_Produto.length; i++){
+            if (dadosLojinha.nome_Produto[i] == null) {
+                System.out.printf("%d - %-20s : R$ %.2f%n",
+                        (i+1), "Sem cadastro", dadosLojinha.valor_Produto[i]);
+            } else {
+                System.out.printf("%d - %-20s : R$ %.2f%n",
+                        (i+1), dadosLojinha.nome_Produto[i], dadosLojinha.valor_Produto[i]);
+            }
+        }
+        System.out.println("=================================================");
+        System.out.print("Escolha uma opção: ");
     }
 }
