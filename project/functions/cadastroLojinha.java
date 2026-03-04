@@ -1,6 +1,8 @@
-package project;
+package project.functions;
 
 import java.util.Scanner;
+
+import project.dadosLojinha;
 
 public class cadastroLojinha {
     public static void cadastro(Scanner entrada_dados_main) {

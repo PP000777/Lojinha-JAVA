@@ -2,6 +2,9 @@ package project;
 
 import java.util.Scanner;
 
+import project.functions.fimDaCompraLojinha;
+import project.functions.menusLojinha;
+
 public class mainLojinha {
     public static void main(String[] args) {
         Scanner entrada_dados_main = new Scanner(System.in);

@@ -1,5 +1,7 @@
-package project;
+package project.functions;
 import java.util.Scanner;
+
+import project.dadosLojinha;
 
 public class fimDaCompraLojinha {
     public static void fimdesconto(String[] args) {
