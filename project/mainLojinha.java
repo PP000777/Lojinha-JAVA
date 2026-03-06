@@ -5,15 +5,13 @@ import java.util.Scanner;
 import project.functions.fimDaCompraLojinha;
 import project.functions.menusLojinha;
 
+
 public class mainLojinha {
     public static void main(String[] args) {
         Scanner entrada_dados_main = new Scanner(System.in);
-        //Adicionei dois produtos para os testes fluírem mais rapido
-        dadosLojinha.nome_Produto[0] = "Camisa";
-        dadosLojinha.valor_Produto[0] = 50.0;
+        produtos.todos_produtoss.add(new produtos("Camisa", 40.60));
+        produtos.todos_produtoss.add(new produtos("Calça", 80.00));
 
-        dadosLojinha.nome_Produto[1] = "Calça";
-        dadosLojinha.valor_Produto[1] = 120.0;
 
         while(true){
         menusLojinha.menu(entrada_dados_main);
@@ -24,10 +22,10 @@ public class mainLojinha {
             while (true) {
             menusLojinha.compras(entrada_dados_main);
             int opcao2 = entrada_dados_main.nextInt();
-            if (opcao2<= dadosLojinha.valor_Produto.length && dadosLojinha.nome_Produto[opcao2-1] != null) {
+            int opcaof = (opcao2 - 1);
+            if (opcao2<= produtos.todos_produtoss.size() && produtos.todos_produtoss.get(opcaof) != null) {
                 System.out.println("Produto Adicionado");
-                dadosLojinha.total += dadosLojinha.valor_Produto[opcao2-1];
-                dadosLojinha.total_produtos[opcao2-1] = dadosLojinha.nome_Produto[opcao2-1];
+                carrinho.todos_produtossCarrinho.add(produtos.todos_produtoss.get(opcaof));
                 break;
             }else{
                 System.out.println("Produto não cadastrado");
