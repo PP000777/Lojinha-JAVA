@@ -2,7 +2,7 @@ package project.functions;
 
 import java.util.Scanner;
 
-import project.dadosLojinha;
+import project.produtos;
 
 public class removerProdutosLojinha {
     public static void remover(Scanner entrada_dados_main) {
@@ -14,9 +14,8 @@ public class removerProdutosLojinha {
             System.out.println("Preencha com uma opção válida, deve ser maior que 0!!");
         }else{
                 int opcaoRemover = opcaoo - 1;
-                if (dadosLojinha.nome_Produto[opcaoRemover] != null && dadosLojinha.valor_Produto[opcaoRemover] != 0){
-                    dadosLojinha.nome_Produto[opcaoRemover] = null;
-                    dadosLojinha.valor_Produto[opcaoRemover] = 0;
+                if (produtos.todos_produtoss.get(opcaoRemover) != null){
+                    produtos.todos_produtoss.remove(opcaoRemover);
                     System.out.println("Produto removido com sucesso!!");
                 }else{
                     System.out.println("Esse produto não existe");

@@ -1,7 +1,9 @@
 package project.functions;
+
 import java.util.Scanner;
 
-import project.dadosLojinha;
+import project.carrinho;
+import project.produtos;
 
 public class menusLojinha {
 
@@ -36,13 +38,13 @@ public class menusLojinha {
         int opcaoestoque = entrada_dados_main.nextInt();
         if (opcaoestoque == 1) {
             cadastroLojinha.cadastro(entrada_dados_main);
-        } 
-        
+        }
+
         if (opcaoestoque == 2) {
             edicaoDeProdutosLojinha.editor(entrada_dados_main);
         }
 
-        if(opcaoestoque == 3){
+        if (opcaoestoque == 3) {
             removerProdutosLojinha.remover(entrada_dados_main);
         }
     }
@@ -52,21 +54,20 @@ public class menusLojinha {
         System.out.println("=================================================");
         System.out.println("                  SEU CARRINHO                 ");
         System.out.println("=================================================");
-        System.out.printf("Valor total do carrinho: R$ %.2f%n", dadosLojinha.total);
+        carrinho.calcular_valor();
+        System.out.printf("Valor total do carrinho: R$ %.2f%n", carrinho.total_carrinho);
         System.out.println();
         System.out.println("Produtos no carrinho:");
         System.out.println("-------------------------------------------------");
 
-        for(int i = 0; i < dadosLojinha.total_produtos.length; i++){
-            if (dadosLojinha.total_produtos[i] != null) {
-                System.out.println((i+1) + " - " + dadosLojinha.total_produtos[i]);
+        for (int i = 0; i < carrinho.todos_produtossCarrinho.size(); i++) {
+            if (carrinho.todos_produtossCarrinho.get(i) != null) {
+                System.out.println((i + 1) + " - " + carrinho.todos_produtossCarrinho.get(i));
             }
         }
 
         System.out.println("=================================================");
     }
-    
-
 
     public static void compras(Scanner entrada_dados_main) {
 
@@ -76,13 +77,13 @@ public class menusLojinha {
         System.out.println("O que você quer comprar?");
         System.out.println("-------------------------------------------------");
 
-        for(int i = 0; i < dadosLojinha.nome_Produto.length; i++){
-            if (dadosLojinha.nome_Produto[i] == null) {
+        for (int i = 0; i < produtos.todos_produtoss.size(); i++) {
+            if (produtos.todos_produtoss.get(i) == null) {
                 System.out.printf("%d - %-20s : R$ %.2f%n",
-                        (i+1), "Sem cadastro", dadosLojinha.valor_Produto[i]);
+                        (i + 1), "Sem cadastro - R$ 00.00");
             } else {
                 System.out.printf("%d - %-20s : R$ %.2f%n",
-                        (i+1), dadosLojinha.nome_Produto[i], dadosLojinha.valor_Produto[i]);
+                        (i + 1), produtos.todos_produtoss.get(i));
             }
         }
 
@@ -91,7 +92,7 @@ public class menusLojinha {
         System.out.print("Escolha uma opção: ");
     }
 
-    public static void menu_cadastro(Scanner entrada_dados_main){
+    public static void menu_cadastro(Scanner entrada_dados_main) {
 
         System.out.println("=================================================");
         System.out.println("                    CADASTROS                  ");
@@ -105,14 +106,19 @@ public class menusLojinha {
         System.out.print("Escolha uma opção: ");
     }
 
-    public static void opcao_Slots(Scanner entrada_dados_main){
+    public static void opcao_Slots(Scanner entrada_dados_main) {
 
         System.out.println("=================================================");
         System.out.println("                ESCOLHA UM SLOT                ");
         System.out.println("=================================================");
 
-        for(int i = 1; i <= dadosLojinha.tamanho_Array; i++){
-            System.out.println(i + " - Slot disponível");
+        for (int i = 1; i <= produtos.todos_produtoss.size(); i++) {
+            if (produtos.todos_produtoss.get(i) == null) {
+                System.out.println(i + " - Slot disponível");
+            } else {
+                System.out.println(i + " - Slot ocupado");
+            }
+
         }
 
         System.out.println("=================================================");
@@ -126,33 +132,34 @@ public class menusLojinha {
         System.out.println("Qual produto você quer editar?");
         System.out.println("-------------------------------------------------");
 
-        for(int i = 0; i < dadosLojinha.nome_Produto.length; i++){
-            if (dadosLojinha.nome_Produto[i] == null) {
+        for (int i = 0; i < produtos.todos_produtoss.size(); i++) {
+            if (produtos.todos_produtoss.get(i) == null) {
                 System.out.printf("%d - %-20s : R$ %.2f%n",
-                        (i+1), "Sem cadastro", dadosLojinha.valor_Produto[i]);
+                        (i + 1), "Sem cadastro - R$ 00.00");
             } else {
                 System.out.printf("%d - %-20s : R$ %.2f%n",
-                        (i+1), dadosLojinha.nome_Produto[i], dadosLojinha.valor_Produto[i]);
+                        (i + 1), produtos.todos_produtoss.get(i));
             }
         }
         System.out.println("=================================================");
         System.out.print("Escolha uma opção: ");
-        
+
     }
-    public static void remover(){
+
+    public static void remover() {
         System.out.println("=================================================");
         System.out.println("              REMOVEDOR DE PRODUTOS              ");
         System.out.println("=================================================");
         System.out.println("Qual produto você quer excluir PERMANENTEMENTE?");
         System.out.println("-------------------------------------------------");
 
-        for(int i = 0; i < dadosLojinha.nome_Produto.length; i++){
-            if (dadosLojinha.nome_Produto[i] == null) {
+        for (int i = 0; i < produtos.todos_produtoss.size(); i++) {
+            if (produtos.todos_produtoss.get(i) == null) {
                 System.out.printf("%d - %-20s : R$ %.2f%n",
-                        (i+1), "Sem cadastro", dadosLojinha.valor_Produto[i]);
+                        (i + 1), "Sem cadastro - R$ 00.00");
             } else {
                 System.out.printf("%d - %-20s : R$ %.2f%n",
-                        (i+1), dadosLojinha.nome_Produto[i], dadosLojinha.valor_Produto[i]);
+                        (i + 1), produtos.todos_produtoss.get(i));
             }
         }
         System.out.println("=================================================");

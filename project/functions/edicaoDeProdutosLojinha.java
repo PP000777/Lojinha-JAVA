@@ -1,8 +1,7 @@
 package project.functions;
 
 import java.util.Scanner;
-
-import project.dadosLojinha;
+import project.produtos;
 
 public class edicaoDeProdutosLojinha {
     public static void editor(Scanner entrada_dados_main) {
@@ -16,7 +15,7 @@ public class edicaoDeProdutosLojinha {
             while (true) {
         int opcc = opcao_slotedi - 1;
         
-        if (dadosLojinha.nome_Produto[opcc] == null || dadosLojinha.valor_Produto[opcc] == 0) {
+        if (produtos.todos_produtoss.get(opcc) == null) {
             System.out.println("Esse produto não ta cadastrado ou não está completo");
             break;
         }else{
@@ -29,14 +28,15 @@ public class edicaoDeProdutosLojinha {
             if (opc == 1) {
                 System.out.println("Qual o novo nome do produto? ");
                 String novoNome = entrada_dados_main.nextLine();
-                dadosLojinha.nome_Produto[opcc] = novoNome;
+                produtos.todos_produtoss.get(opcc).setnameProduto(novoNome);
                 System.out.println("Produto alterado com sucesso!!");
                 break;
                 
             }else if(opc == 2){
                 System.out.println("Qual o novo valor do produto? ");
-                dadosLojinha.valor_Produto[opcc] = entrada_dados_main.nextDouble();
+                double novoValor = entrada_dados_main.nextDouble();
                 entrada_dados_main.nextLine();
+                produtos.todos_produtoss.get(opcc).setvalorProduto(novoValor);
                 System.out.println("Produto alterado com sucesso!!");
                 break;
             }

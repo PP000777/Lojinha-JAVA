@@ -1,7 +1,7 @@
 package project.functions;
 import java.util.Scanner;
 
-import project.dadosLojinha;
+import project.carrinho;
 
 public class fimDaCompraLojinha {
     public static void fimdesconto(String[] args) {
@@ -33,16 +33,16 @@ public class fimDaCompraLojinha {
         }catch(InterruptedException error){
             System.out.println("Deu erro nessa bagaça");
         }
+        carrinho.calcular_valor();
+        double descontode15 = (carrinho.total_carrinho * 0.15);
+        double descontode5 = (carrinho.total_carrinho * 0.05);
 
-        double descontode15 = (dadosLojinha.total * 0.15);
-        double descontode5 = (dadosLojinha.total * 0.05);
-
-        if (dadosLojinha.total >= 200 && isPremium) {
-            System.out.println("Esse é o seu valor com desconto de 15%, ficou nesse valor:" + "R$" +(dadosLojinha.total - descontode15));
-        }else if (dadosLojinha.total >= 200 && isPremium == false){
-            System.out.println("Esse é o seu valor com desconto de 5%, ficou nesse valor: " + "R$" +(dadosLojinha.total - descontode5));
+        if (carrinho.total_carrinho >= 200 && isPremium) {
+            System.out.println("Esse é o seu valor com desconto de 15%, ficou nesse valor:" + "R$" +(carrinho.total_carrinho - descontode15));
+        }else if (carrinho.total_carrinho >= 200 && isPremium == false){
+            System.out.println("Esse é o seu valor com desconto de 5%, ficou nesse valor: " + "R$" +(carrinho.total_carrinho - descontode5));
         }else{
-            System.out.println("nao tem desconto maldito, ficou no valor de " + "R$" + dadosLojinha.total);
+            System.out.println("nao tem desconto maldito, ficou no valor de " + "R$" + carrinho.total_carrinho);
         }
 
         entrada_dados.close();
