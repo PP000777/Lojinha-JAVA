@@ -7,8 +7,12 @@ public class produtos {
     String nome_Produto;
     double valor_Produto;
 
-    public double getvalor(){
+    public double getValor(){
         return valor_Produto;
+    }
+
+       public String getNome(){
+        return nome_Produto;
     }
 
     public void setvalorProduto(double valor){

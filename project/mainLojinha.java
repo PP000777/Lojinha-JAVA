@@ -25,7 +25,11 @@ public class mainLojinha {
             int opcaof = (opcao2 - 1);
             if (opcao2<= produtos.todos_produtoss.size() && produtos.todos_produtoss.get(opcaof) != null) {
                 System.out.println("Produto Adicionado");
-                carrinho.todos_produtossCarrinho.add(produtos.todos_produtoss.get(opcaof));
+                produtos indicador = produtos.todos_produtoss.get(opcaof);
+                String nomeProdutoparaCarrinho = indicador.getNome();
+                double valorProdutoparaCarrinho = indicador.getValor();
+                carrinho p1 = new carrinho(nomeProdutoparaCarrinho,valorProdutoparaCarrinho);
+                carrinho.todos_produtossCarrinho.add(p1);
                 break;
             }else{
                 System.out.println("Produto não cadastrado");

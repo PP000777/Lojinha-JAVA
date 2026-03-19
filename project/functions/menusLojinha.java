@@ -50,22 +50,26 @@ public class menusLojinha {
     }
 
     public static void carrinho(String[] args) {
+System.out.println("=================================================");
+System.out.println("                  SEU CARRINHO                  ");
+System.out.println("=================================================");
+double total = carrinho.calcular_valor();
+System.out.printf("Valor total do carrinho: R$ %.2f%n", total);
+System.out.println();
+System.out.println("Produtos no carrinho:");
+System.out.println("-------------------------------------------------");
 
-        System.out.println("=================================================");
-        System.out.println("                  SEU CARRINHO                 ");
-        System.out.println("=================================================");
-        carrinho.calcular_valor();
-        System.out.printf("Valor total do carrinho: R$ %.2f%n", carrinho.total_carrinho);
-        System.out.println();
-        System.out.println("Produtos no carrinho:");
-        System.out.println("-------------------------------------------------");
+for (int i = 0; i < carrinho.todos_produtossCarrinho.size(); i++) {
 
-        for (int i = 0; i < carrinho.todos_produtossCarrinho.size(); i++) {
-            if (carrinho.todos_produtossCarrinho.get(i) != null) {
-                System.out.println((i + 1) + " - " + carrinho.todos_produtossCarrinho.get(i));
-            }
-        }
+    carrinho produto = carrinho.todos_produtossCarrinho.get(i);
 
+    if (produto != null) {
+        System.out.printf("%d - %-20s : R$ %.2f%n",
+                (i + 1),
+                produto.carrinhoGetNome(),
+                produto.carrinhoGetValor());
+    }
+}
         System.out.println("=================================================");
     }
 
@@ -76,17 +80,19 @@ public class menusLojinha {
         System.out.println("=================================================");
         System.out.println("O que você quer comprar?");
         System.out.println("-------------------------------------------------");
-
         for (int i = 0; i < produtos.todos_produtoss.size(); i++) {
             if (produtos.todos_produtoss.get(i) == null) {
                 System.out.printf("%d - %-20s : R$ %.2f%n",
-                        (i + 1), "Sem cadastro - R$ 00.00");
+                        (i + 1), "Sem cadastro", 0.0);
             } else {
+                produtos produto = produtos.todos_produtoss.get(i);
+
                 System.out.printf("%d - %-20s : R$ %.2f%n",
-                        (i + 1), produtos.todos_produtoss.get(i));
+                        (i + 1),
+                        produto.getNome(),
+                        produto.getValor());
             }
         }
-
         System.out.println("6 - Voltar ao menu para concluir sua compra");
         System.out.println("=================================================");
         System.out.print("Escolha uma opção: ");
