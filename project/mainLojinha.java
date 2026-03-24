@@ -11,7 +11,8 @@ public class mainLojinha {
         Scanner entrada_dados_main = new Scanner(System.in);
         produtos.todos_produtoss.add(new produtos("Camisa", 40.60));
         produtos.todos_produtoss.add(new produtos("Calça", 80.00));
-
+        produtos.todos_produtoss.add(null);
+        produtos.todos_produtoss.add(null);
 
         while(true){
         menusLojinha.menu(entrada_dados_main);

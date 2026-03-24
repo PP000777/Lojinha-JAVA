@@ -16,6 +16,7 @@ public class removerProdutosLojinha {
                 int opcaoRemover = opcaoo - 1;
                 if (produtos.todos_produtoss.get(opcaoRemover) != null){
                     produtos.todos_produtoss.remove(opcaoRemover);
+                    produtos.todos_produtoss.add(null);
                     System.out.println("Produto removido com sucesso!!");
                 }else{
                     System.out.println("Esse produto não existe");

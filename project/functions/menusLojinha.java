@@ -32,20 +32,25 @@ public class menusLojinha {
         System.out.println("1 - Realizar cadastro");
         System.out.println("2 - Alterar algum produto");
         System.out.println("3 - Remover algum produto");
-        System.out.println("4 - Voltar");
+        System.out.println("4 - Adicionar um slot vazio");
+        System.out.println("5 - Voltar");
         System.out.println("=================================================");
         System.out.print("Escolha uma opção: ");
         int opcaoestoque = entrada_dados_main.nextInt();
         if (opcaoestoque == 1) {
             cadastroLojinha.cadastro(entrada_dados_main);
         }
-
+        
         if (opcaoestoque == 2) {
             edicaoDeProdutosLojinha.editor(entrada_dados_main);
         }
 
         if (opcaoestoque == 3) {
             removerProdutosLojinha.remover(entrada_dados_main);
+        }
+
+        if (opcaoestoque == 4) {
+            produtos.todos_produtoss.add(null);
         }
     }
 
@@ -93,7 +98,8 @@ for (int i = 0; i < carrinho.todos_produtossCarrinho.size(); i++) {
                         produto.getValor());
             }
         }
-        System.out.println("6 - Voltar ao menu para concluir sua compra");
+        int numero = produtos.todos_produtoss.size() + 1;
+        System.out.println( numero + "- Voltar ao menu para concluir sua compra");    
         System.out.println("=================================================");
         System.out.print("Escolha uma opção: ");
     }
@@ -117,9 +123,10 @@ for (int i = 0; i < carrinho.todos_produtossCarrinho.size(); i++) {
         System.out.println("=================================================");
         System.out.println("                ESCOLHA UM SLOT                ");
         System.out.println("=================================================");
-
+        
         for (int i = 1; i <= produtos.todos_produtoss.size(); i++) {
-            if (produtos.todos_produtoss.get(i) == null) {
+            int numerofff = i-1;
+            if (produtos.todos_produtoss.get(numerofff) == null) {
                 System.out.println(i + " - Slot disponível");
             } else {
                 System.out.println(i + " - Slot ocupado");
@@ -139,12 +146,14 @@ for (int i = 0; i < carrinho.todos_produtossCarrinho.size(); i++) {
         System.out.println("-------------------------------------------------");
 
         for (int i = 0; i < produtos.todos_produtoss.size(); i++) {
-            if (produtos.todos_produtoss.get(i) == null) {
+            produtos productForEdit = produtos.todos_produtoss.get(i);
+
+            if (productForEdit == null) {
                 System.out.printf("%d - %-20s : R$ %.2f%n",
-                        (i + 1), "Sem cadastro - R$ 00.00");
+                        (i + 1), "Sem cadastro", 0.0);
             } else {
                 System.out.printf("%d - %-20s : R$ %.2f%n",
-                        (i + 1), produtos.todos_produtoss.get(i));
+                        (i + 1), productForEdit.getNome(), productForEdit.getValor());
             }
         }
         System.out.println("=================================================");
@@ -159,13 +168,17 @@ for (int i = 0; i < carrinho.todos_produtossCarrinho.size(); i++) {
         System.out.println("Qual produto você quer excluir PERMANENTEMENTE?");
         System.out.println("-------------------------------------------------");
 
+
         for (int i = 0; i < produtos.todos_produtoss.size(); i++) {
-            if (produtos.todos_produtoss.get(i) == null) {
+            produtos produtoRemover = produtos.todos_produtoss.get(i);
+
+            if (produtoRemover == null) {
                 System.out.printf("%d - %-20s : R$ %.2f%n",
-                        (i + 1), "Sem cadastro - R$ 00.00");
+                        (i + 1), "Sem cadastro", 0.00);
             } else {
                 System.out.printf("%d - %-20s : R$ %.2f%n",
-                        (i + 1), produtos.todos_produtoss.get(i));
+                        (i + 1), produtoRemover.getNome(),
+                        produtoRemover.getValor());
             }
         }
         System.out.println("=================================================");
