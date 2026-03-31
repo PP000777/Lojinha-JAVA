@@ -1,7 +1,5 @@
-package project.functions;
+package project.src.functions;
 import java.util.Scanner;
-
-import project.carrinho;
 
 public class fimDaCompraLojinha {
     public static void fimdesconto(String[] args) {

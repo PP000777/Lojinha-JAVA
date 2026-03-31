@@ -1,7 +1,6 @@
-package project.functions;
+package project.src.functions;
 
 import java.util.Scanner;
-import project.produtos;
 
 public class edicaoDeProdutosLojinha {
     public static void editor(Scanner entrada_dados_main) {

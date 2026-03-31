@@ -1,9 +1,11 @@
-package project;
+package project.src;
 
 import java.util.Scanner;
 
-import project.functions.fimDaCompraLojinha;
-import project.functions.menusLojinha;
+import project.src.functions.carrinho;
+import project.src.functions.fimDaCompraLojinha;
+import project.src.functions.menusLojinha;
+import project.src.functions.produtos;
 
 
 public class mainLojinha {

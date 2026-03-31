@@ -1,10 +1,6 @@
-package project.functions;
+package project.src.functions;
 
 import java.util.Scanner;
-
-import project.carrinho;
-import project.produtos;
-
 public class menusLojinha {
 
     public static void menu(Scanner entrada_dados_main) {

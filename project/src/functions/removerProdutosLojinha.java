@@ -1,8 +1,6 @@
-package project.functions;
+package project.src.functions;
 
 import java.util.Scanner;
-
-import project.produtos;
 
 public class removerProdutosLojinha {
     public static void remover(Scanner entrada_dados_main) {
