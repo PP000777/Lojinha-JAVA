@@ -20,11 +20,10 @@ public class cadastroLojinha {
             if (nomeProduto == null) {
                 System.out.println("Qual o nome do produto? ");
                 String nomeProdutoCadastro = entrada_dados_main.nextLine();
-                entrada_dados_main.nextLine();
                 System.out.println("Qual o valor desse produto? ");
                 double valorProdutoCadastro = entrada_dados_main.nextDouble();
                 entrada_dados_main.nextLine();
-                produtos.todos_produtoss.add(new produtos(nomeProdutoCadastro, valorProdutoCadastro));
+                produtos.todos_produtoss.set(opcaofinal ,new produtos(nomeProdutoCadastro, valorProdutoCadastro));
                 System.out.println("PRODUTO CADASTRADO COM SUCESSO!!!");
                 System.out.println("Voltando para a página inicial...");
                 try {
