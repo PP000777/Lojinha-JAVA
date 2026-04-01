@@ -1,9 +1,6 @@
 import java.util.Scanner;
 
-import functions.carrinho;
-import functions.fimDaCompraLojinha;
-import functions.menusLojinha;
-import functions.produtos;
+import functions.*;
 
 
 public class mainLojinha {
