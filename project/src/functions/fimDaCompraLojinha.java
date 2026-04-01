@@ -1,4 +1,4 @@
-package project.src.functions;
+package functions;
 import java.util.Scanner;
 
 public class fimDaCompraLojinha {
