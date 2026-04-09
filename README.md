@@ -9,13 +9,17 @@ O programa simula uma lojinha no terminal onde é possível:
 - Fazer compras
 - Calcular o total
 
-## Como executar
+## Como executar?
+
+### Crie uma pasta bin
+Crie uma pasta com o nome "bin" para armazenar todos os arquivos .class que vai ser gerado, compilando todos os arquivos em um local para evitar bagunça nos arquivos
 
 ### Compilar
-javac project/*.java
+cd project
+javac -d bin src/*.java src/functions/*.java
 
 ### Executar
-java project.mainLojinha
+java -cp bin mainLojinha
 
 ## Objetivo
 
@@ -26,14 +30,6 @@ Praticar conceitos básicos de Java:
 - Scanner
 - Arrays
 - Menus
-
-Neste repositório você encontrará:
-
-- Projetos simples para treino de lógica  
-- Exercícios práticos em Java  
-- Programas de console  
-- Pequenos sistemas, jogos e simulações  
-- Códigos focados em aprendizado e prática  
 
 ---
 

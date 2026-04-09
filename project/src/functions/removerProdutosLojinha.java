@@ -1,4 +1,4 @@
-package project;
+package functions;
 
 import java.util.Scanner;
 
@@ -12,9 +12,9 @@ public class removerProdutosLojinha {
             System.out.println("Preencha com uma opção válida, deve ser maior que 0!!");
         }else{
                 int opcaoRemover = opcaoo - 1;
-                if (dadosLojinha.nome_Produto[opcaoRemover] != null && dadosLojinha.valor_Produto[opcaoRemover] != 0){
-                    dadosLojinha.nome_Produto[opcaoRemover] = null;
-                    dadosLojinha.valor_Produto[opcaoRemover] = 0;
+                if (produtos.todos_produtoss.get(opcaoRemover) != null){
+                    produtos.todos_produtoss.remove(opcaoRemover);
+                    produtos.todos_produtoss.add(null);
                     System.out.println("Produto removido com sucesso!!");
                 }else{
                     System.out.println("Esse produto não existe");
